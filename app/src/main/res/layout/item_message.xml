@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="model"
+                  type="com.prince.smsreader.model.Messages"/>
+    </data>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="8dp"/>
+
+        <TextView
+                android:id="@+id/tv_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@{model.newMessage?@android:color/black:@android:color/darker_gray}"
+                android:text="@{model.number}"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"/>
+
+        <TextView
+                android:id="@+id/tv_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@{model.newMessage?@android:color/black:@android:color/darker_gray}"
+                android:text="@{model.message}"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2dp"/>
+
+    </LinearLayout>
+</layout>
